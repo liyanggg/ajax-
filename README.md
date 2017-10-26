@@ -26,7 +26,7 @@ IE8通过XDomainRequest对象支持CORS，其他通过XHR对象支持CORS。CORS
 
 JSONP
 JSONP把JSON包裹在函数里面发送HTTP请求，通过设置<script>的URL来发送跨域HTTP请求
-1、    通过script的src请求资源,浏览器允许跨域引用js,不受		同源策略约束。
-2、    请求的资源中用回调函数的将数据进行包裹
-3、    调用方要定义回调函数
+	1、    通过script的src请求资源,浏览器允许跨域引用js,不受同源策略约束。
+	2、    请求的资源中用回调函数的将数据进行包裹
+	3、    调用方要定义回调函数
 
