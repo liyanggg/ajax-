@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	window.onload = function(){
+
+		document.getElementsByTagName("a")[0].onclick = function(){
+			var url = this.href
+
+			var req = new XMLHttpRequest();
+			req.onreadystatechange = function(){
+				//响应是否完成
+				if(req.readyState == 4){
+					//响应是否可用
+					if(req.status == 200 || req.status == 304){
+						var p = document.getElementsByTagName("p")[0];
+						p.innerHTML = req.responseText;
+					}
+				}
+			}
+			req.open("get", url);
+			req.send(null);
+			return false;
+		}
+	}
+	</script>
+</head>
+<body style="font-size:24px">
+
+	<a href="aNote.txt">Request!</a>
+
+	<p style="background:green"></p>
+
+</body>
+</html>
