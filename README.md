@@ -18,12 +18,12 @@ responseText：作为响应主体返回文本；
 responseXML：响应内容类型为”text/xml”或”application/xml”，则保存包含响应数据的XML文档；
 status和statusText；
 
-跨域
-Cross-origin Resource Sharing
+CORS
 IE8通过XDomainRequest对象支持CORS，其他通过XHR对象支持CORS。CORS稳定，但不兼容低版本IE。
 当JavaScript向外域（如sina.com）发起请求后，浏览器收到响应后，首先检查Access-Control-Allow-Origin是否包含本域，如果不是，则请求失败，js无法获取到响应的任何数据。
 假设本域是my.com，外域是sina.com，只要响应头Access-Control-Allow-Origin为http://my.com，或者是*，本次请求就可以成功。
 跨域能否成功，取决于对方服务器是否愿意给你设置一个正确的Access-Control-Allow-Origin，决定权始终在对方手中。
+
 JSONP
 JSONP把JSON包裹在函数里面发送HTTP请求，通过设置<script>的URL来发送跨域HTTP请求
 1、    通过script的src请求资源,浏览器允许跨域引用js,不受		同源策略约束。
