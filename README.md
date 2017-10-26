@@ -1,6 +1,7 @@
 # ajax
 
 ##XHR
+
 XHR是负责ajax运作的核心对象。XHR定义了一个用脚本操纵HTTP的API，能以多种形式返回服务器的响应 (XML/文本)。
 1. 创建XMLHttpRequest对象
 	var req = new XMLHttpRequest();
@@ -18,12 +19,15 @@ responseXML：响应内容类型为”text/xml”或”application/xml”，则�
 status和statusText；
 
 ##跨域
+
 ###CORS
+
 IE8通过XDomainRequest对象支持CORS，其他通过XHR对象支持CORS。CORS稳定，但不兼容低版本IE。
 当JavaScript向外域（如sina.com）发起请求后，浏览器收到响应后，首先检查Access-Control-Allow-Origin是否包含本域，如果不是，则请求失败，js无法获取到响应的任何数据。
 假设本域是my.com，外域是sina.com，只要响应头Access-Control-Allow-Origin为http://my.com，或者是*，本次请求就可以成功。
 跨域能否成功，取决于对方服务器是否愿意给你设置一个正确的Access-Control-Allow-Origin，决定权始终在对方手中。
 ###JSONP
+
 JSONP把JSON包裹在函数里面发送HTTP请求，通过设置<script>的URL来发送跨域HTTP请求
 	1、    通过script的src请求资源,浏览器允许跨域引用js,不受同源策略约束。
 	2、    请求的资源中用回调函数的将数据进行包裹
