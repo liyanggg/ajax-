@@ -10,7 +10,7 @@ XHR是负责ajax运作的核心对象。XHR定义了一个用脚本操纵HTTP的
 	req.open(http-method，url，async);
 	* URL使用相对路径，绝对路径会报错（同源策略）
 	* async值为true 或 false
-  	** 第三个参数为false发送同步请求，js会等待请求返回，获取status。异步则需要onreadystatechange事件处理，当readystate=4响应完成。须在调用open()前指定onreadystatechange事件处理才能确保跨浏览器兼容性。 
+  * async为false发送同步请求，js会等待请求返回，获取status。异步则需要onreadystatechange事件处理，当readystate=4响应完成。须在调用open()前指定onreadystatechange事件处理才能确保跨浏览器兼容性。 
 3. send方法发送请求
 	req.send()；参数为请求主体entity-body。GET无主体。
 	
@@ -29,7 +29,7 @@ ___
 JSONP
 ___
 JSONP把JSON包裹在函数里面发送HTTP请求，通过设置<script>的URL来发送跨域HTTP请求
-*1、    通过script的src请求资源,浏览器允许跨域引用js,不受同源策略约束。
-*2、    请求的资源中用回调函数的将数据进行包裹
-*3、    调用方要定义回调函数
+* 通过script的src请求资源,浏览器允许跨域引用js,不受同源策略约束。
+* 请求的资源中用回调函数的将数据进行包裹
+* 调用方要定义回调函数
 
