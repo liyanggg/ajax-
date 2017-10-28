@@ -4,12 +4,12 @@
 XHR是负责ajax运作的核心对象。XHR定义了一个用脚本操纵HTTP的API，能以多种形式返回服务器的响应 (XML/文本)。
 1. 创建XMLHttpRequest对象
 	var req = new XMLHttpRequest();
-2. open方法启动请求
+2. open方法启动请求。
 * req.open(http-method，url，async);
 	* URL使用相对路径，绝对路径会报错（同源策略）
 	* async值为true 或 false
 	* async为false发送同步请求，js会等待请求返回，获取status。异步则需要onreadystatechange事件处理，当readystate=4响应完成。须在调用open()前指定onreadystatechange事件处理才能确保跨浏览器兼容性。 
-3. send方法发送请求
+3. send方法发送请求。
 *req.send()；参数为请求主体entity-body。GET无主体。
 	
 当收到服务器响应后，响应数据会自动填充XHR对象的属性：
