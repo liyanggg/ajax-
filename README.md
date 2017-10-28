@@ -9,15 +9,15 @@ XHR是负责ajax运作的核心对象。XHR定义了一个用脚本操纵HTTP的
 2. open方法启动请求
 	req.open(http-method，url，async);
 	* URL使用相对路径，绝对路径会报错（同源策略）
-	*async值为true 或 false
-  第三个参数为false发送同步请求，js会等待请求返回，获取status。异步则需要onreadystatechange事件处理，当readystate=4响应完成。须在调用open()前指定onreadystatechange事件处理才能确保跨浏览器兼容性。 
+	* async值为true 或 false
+  ** 第三个参数为false发送同步请求，js会等待请求返回，获取status。异步则需要onreadystatechange事件处理，当readystate=4响应完成。须在调用open()前指定onreadystatechange事件处理才能确保跨浏览器兼容性。 
 3. send方法发送请求
-	req.send()；参数为请求主体。（GET无主体）
+	req.send()；参数为请求主体entity-body。GET无主体。
 	
 当收到服务器响应后，响应数据会自动填充XHR对象的属性：
-*responseText：作为响应主体返回文本；
-*responseXML：响应内容类型为”text/xml”或”application/xml”，则保存包含响应数据的XML文档；
-*status和statusText；
+* responseText：作为响应主体返回文本；
+* responseXML：响应内容类型为”text/xml”或”application/xml”，则保存包含响应数据的XML文档；
+* status和statusText；
 
 跨域CORS
 ___
